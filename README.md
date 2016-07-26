@@ -1,7 +1,7 @@
 [![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager)
 
 # Mailgun Manager for Java  Version 0.25
-*Updated Mon, Jul 25, 2016*
+*Updated Tue, Jul 26, 2016*
 
 ## Introduction
 Mailgun Manager is a _partial_ Java library implementation of [Mailgun’s API](http://documentation.mailgun.com/api_reference.html#api-reference). It provides a single interface to perform common Mailgun API operations and simplifies access by abstracting the lower level HTTP programming code.
