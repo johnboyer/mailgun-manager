@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager)
+
 # Mailgun Manager for Java  Version 0.25
 *Updated Mon, Jul 25, 2016*
 
