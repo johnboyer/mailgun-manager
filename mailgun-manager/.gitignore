@@ -1,0 +1,14 @@
+/bin/
+/doc/
+/ivy-report.css
+/rodaxsoft-mailgun-email-validation-default.graphml
+/rodaxsoft-mailgun-email-validation-default.html
+/build.xml
+/deploy.xml
+/sonar-project.properties
+/.sonar/
+/testcase.properties.private
+/dist/
+/lib/
+/com.rodaxsoft-mailgun-manager-default.html
+/com.rodaxsoft-mailgun-manager-default.graphml
