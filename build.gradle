@@ -16,6 +16,7 @@ repositories {
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
     
+	/*
      def ivyXml = new XmlParser().parse(new File("/Users/johndev/git/mailgun-repos/mailgun-manager/ivy.xml"))
 
     println "dependencies {"
@@ -24,6 +25,8 @@ repositories {
         println("\t$scope \"${it.@org}:${it.@name}:${it.@rev}\"")
     }
     println "}"
+	
+	*/
 }
 
 // In this section you declare the dependencies for your production and test code
