@@ -13,8 +13,9 @@ apply plugin: 'java'
 sourceSets {
     main {
         java {
-            srcDir 'mailgun-manager/src/java'
+            srcDir 'mailgun-manager/src'
         }
+	}
 }
 
 // In this section you declare where to find the dependencies of your project
