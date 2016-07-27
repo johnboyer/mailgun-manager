@@ -1,16 +1,16 @@
-[![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager)
+[![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager) [![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0)
 
 # Mailgun Manager for Java  Version 0.25
-*Updated Tue, Jul 26, 2016*
+*Updated Wed, Jul 27, 2016*
 
 ## Introduction
-Mailgun Manager is a _partial_ Java library implementation of [Mailgun’s API](http://documentation.mailgun.com/api_reference.html#api-reference). It provides a single interface to perform common Mailgun API operations and simplifies access by abstracting the lower level HTTP programming code.
+Mailgun Manager API project is a _partial_ Java library implementation of [Mailgun’s API](http://documentation.mailgun.com/api_reference.html#api-reference). It provides a single interface to perform common Mailgun API operations and simplifies access by abstracting the lower level HTTP programming code.
 
 Mailgun Manager makes easy to:
 
+* Send messages to mailing lists or individuals
 * Get campaigns and their history (events)
 * Save campaign events to a CSV file
-* Send messages to mailing lists or individuals
 * Add members to a mailing list (one a time or in-bulk)
 * Fetch, delete, unsubscribe, and update mailing list members
 * Discover invalid email addresses unidentified by other libraries such as `EmailValidator` in Apache Commons
@@ -31,7 +31,7 @@ In the root of your classpath or source directory, create a file named, `mailgun
 	domain = mg.example.com
 
 ### Configure Programmatically
-Configure a `MailAccount` object and invoke the `MailgunManager.register(MailgunAccount)` method.
+Configure a `MailgunAccount` object and invoke the `MailgunManager.register(MailgunAccount)` method.
 
 	//Register Mailgun account info
 	MailgunAccount account = new MailgunAccount();
@@ -189,10 +189,10 @@ In any case, this project is a work-in-progress.
 
 ### Prerequisites
 1. Install and configure [Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
-2. Install and configure the [Egit](http://www.eclipse.org/egit) plugin
-3. Install and configure the [Apache IvyDE](http://ant.apache.org/ivy/ivyde/index.html) plugin
+2. Install and configure the [Egit](http://www.eclipse.org/egit) plugin (optional)
+3. Install and configure the [Buildship Eclipse Plugin](https://projects.eclipse.org/projects/tools.buildship) (optional)
 
-This project is dependent on the following libraries:
+This project uses [Gradle](https://gradle.org) for build automation. It's dependent on the following libraries:
 
 * commons-collections4 4.1
 * commons-configuration 2.0
@@ -206,22 +206,19 @@ This project is dependent on the following libraries:
 * json-lib 2.4 (jdk15)
 * javax.mail 1.5
 
-If you're using [Apache Ivy](http://ant.apache.org/ivy) for dependency management, an `ivy.xml` file has been included in the root of the project. Otherwise, it will need to be converted to a Maven POM file. 
-
 ### Import Project
-The following steps assume that you're using Eclipse with the [Egit](http://www.eclipse.org/egit) and [Apache IvyDE](http://ant.apache.org/ivy/ivyde/index.html) plugin.
+The following steps assume that you're using Eclipse with the [Egit](http://www.eclipse.org/egit) plugin.
 
 1. In Eclipse, click File > Import > Git > Projects from Git.
 2. Then click Next > Clone URI, set the Connection to Git, set the URI, and click Next > Next > Next > Finish.
 3. Click Import existing projects, click Working Directory, and click Next > Finish.
-4. In the Project Explorer, right-click the project, and click Ivy > Resolve.
 
 
 ## API Reference
 
 The `MailgunManager` class in the `com.rodaxsoft.mailgun` package is a facade class that implements the following methods: 
 
-* `addMailingListMember(String, ListMember)`
+* `addMailingListMember(String, ListMemberRequest)`
 * `addMailingListMembers(String, List<ListMember>)`
 * `deleteMailingListMember(String, String)`
 * `getCampaign(String)`
@@ -231,9 +228,9 @@ The `MailgunManager` class in the `com.rodaxsoft.mailgun` package is a facade cl
 * `getMailingListMembers(String, Class<?>)` 
 * `getMailingLists()`
 * `isValidEmail(String)`
-* `registerAccount(MailgunAccount)`
+* `register(MailgunAccount)`
 * `saveCampaignEventsToCSV(String)`
-* `sendMessage(Email)`
+* `sendMessage(EmailRequest)`
 * `unsubscribeMailingListMember(String, String)`
 * `updateMailingListMember(String, ListMemberRequest)`
 
