@@ -1,4 +1,6 @@
 /bin/
+/build
+/.gradle
 /doc/
 /ivy-report.css
 /rodaxsoft-mailgun-email-validation-default.graphml
