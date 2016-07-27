@@ -1,6 +1,6 @@
 [![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager) [![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0)
 
-# Mailgun Manager for Java  Version 0.25
+# Mailgun Manager for Java  Version 1.0.0
 *Updated Wed, Jul 27, 2016*
 
 ## Introduction

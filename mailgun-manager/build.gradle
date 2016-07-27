@@ -13,7 +13,7 @@ apply plugin: 'java'
 description = 'Mailgun Manager is partial Java implementation of the Mailgun REST API'
 
 sourceCompatibility = 1.7
-version = '0.25'
+version = '1.0.0'
 
 sourceSets {
 	main {
