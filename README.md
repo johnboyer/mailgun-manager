@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager) [![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0)
+[![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager) [![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0) [ ![Download](https://api.bintray.com/packages/johnboyer/maven/mailgun-manager/images/download.svg) ](https://bintray.com/johnboyer/maven/mailgun-manager/_latestVersion)
 
 # Mailgun Manager for Java  Version 1.0.0
-*Updated Wed, Jul 27, 2016*
+*Updated Sun, Jul 31, 2016*
 
 ## Introduction
 Mailgun Manager API project is a _partial_ Java library implementation of [Mailgun’s API](http://documentation.mailgun.com/api_reference.html#api-reference). It provides a single interface to perform common Mailgun API operations and simplifies access by abstracting the lower level HTTP programming code.

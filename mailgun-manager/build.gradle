@@ -9,6 +9,7 @@
 
 // Apply the java plugin to add support for Java
 apply plugin: 'java'
+apply plugin: 'maven'
 
 description = 'Mailgun Manager is partial Java implementation of the Mailgun REST API'
 
@@ -28,6 +29,7 @@ repositories {
     // Use 'jcenter' for resolving your dependencies.
     // You can declare any Maven/Ivy/file repository here.
     jcenter()
+    mavenLocal()
     
 	/*
      def ivyXml = new XmlParser().parse(new File("/Users/johndev/git/mailgun-repos/mailgun-manager/ivy.xml"))
@@ -82,5 +84,41 @@ jar {
                    "Implementation-Vendor": "Rodax Software, Inc"
                    )
     }
+}
+
+task createPom {
+    pom {
+        project {
+            groupId 'com.rodaxsoft'
+            artifactId 'mailgun-manager'
+            version '1.0.0'
+            url 'https://github.com/johnboyer/mailgun-sender'
+
+            inceptionYear '2015'
+            licenses {
+                license {
+                    name 'Mozilla Public License Version 2.0'
+                    url 'https://www.mozilla.org/media/MPL/2.0/index.815ca599c9df.txt'
+                    distribution 'repo'
+                }
+            }
+            
+            developers {
+                 developer {
+                       id 'johnboyer'
+                       name 'John Boyer'
+                       email 'john@rodaxsoft.com'
+                   }
+            }
+            
+            scm {
+               connection 'git@github.com:johnboyer/mailgun-sender.git'
+               developerConnection 'https://github.com/johnboyer/mailgun-sender.git'
+               url 'git@github.com:johnboyer/mailgun-sender.git'
+    
+            }
+            
+        }
+    }.writeTo("$buildDir/pom.xml")
 }
 
