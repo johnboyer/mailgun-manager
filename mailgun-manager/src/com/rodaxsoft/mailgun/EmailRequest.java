@@ -14,7 +14,7 @@ package com.rodaxsoft.mailgun;
 /**
  * EmailRequest class stores the message parameters
  * @author John Boyer
- * @version 2015-07-31
+ * @version 2016-11-14
  * @since 0.1
  */
 public class EmailRequest extends AbstractMailgunRequest {
@@ -31,6 +31,10 @@ public class EmailRequest extends AbstractMailgunRequest {
 	 * cc key
 	 */
 	private static final String CC_KEY = "cc";
+	/**
+	 * Delivery time key
+	 */
+	private static final String DELIVERY_TIME_KEY = "o:deliverytime";
 	/**
 	 * Header prefix
 	 */
@@ -144,11 +148,22 @@ public class EmailRequest extends AbstractMailgunRequest {
 	}
 	
 	/**
+	 * Set the delivery time with a UNIX Epoch time-stamp.
+	 * @param time An RFC 2822 date: <code>Tue, 15 Nov 2016 17:00:00 +0000</code>
+	 * @return EmailRequest object
+	 * @since 0.3
+	 */
+	public EmailRequest setDeliveryTime(String time) {
+		parameters.put(DELIVERY_TIME_KEY, time);
+		return this;
+	}
+	
+	/**
 	 * Sets the <i>from</i> address
 	 * @param first First name
 	 * @param last Last Name
 	 * @param email Email address
-	 * @return
+	 * @return EmailRequest object
 	 * @since 0.2
 	 */
 	public EmailRequest setFrom(String first, String last, String email) {
