@@ -1,7 +1,7 @@
-[![Build Status](https://travis-ci.org/johnboyer/mailgun-manager.svg?branch=master)](https://travis-ci.org/johnboyer/mailgun-manager) [![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0) [ ![Download](https://api.bintray.com/packages/johnboyer/maven/mailgun-manager/images/download.svg) ](https://bintray.com/johnboyer/maven/mailgun-manager/_latestVersion)
+[![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0) [ ![Download](https://api.bintray.com/packages/johnboyer/maven/mailgun-manager/images/download.svg) ](https://bintray.com/johnboyer/maven/mailgun-manager/_latestVersion)[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnboyer?utm_source=github&utm_medium=button&utm_term=johnboyer&utm_campaign=github)
 
 # Mailgun Manager for Java  Version 1.0.0
-*Updated Sun, Jul 31, 2016*
+*Updated Thu, Jul 17, 2017*
 
 ## Introduction
 Mailgun Manager API project is a _partial_ Java library implementation of [Mailgun’s API](http://documentation.mailgun.com/api_reference.html#api-reference). It provides a single interface to perform common Mailgun API operations and simplifies access by abstracting the lower level HTTP programming code.
@@ -38,7 +38,7 @@ Configure a `MailgunAccount` object and invoke the `MailgunManager.register(Mail
 	account.setBaseUri("https://api.mailgun.net/v3");
 	account.setDomain("mg.example.com");
 	account.setPrivateApiKey("key-XXXXXX");
-	account.setPublicApiKey("pubkey-XXXXX");	
+	account.setPublicApiKey("pubkey-XXXXX");
 
 	MailgunManager.register(account);
 
@@ -46,21 +46,21 @@ Configure a `MailgunAccount` object and invoke the `MailgunManager.register(Mail
 Using the Mailgun Manager library is easy.
 
 ### Email Validation
-	
+
 	//Validate an email address
 	EmailValidationResponse response;
 	response = MailgunManager.isValidEmail("john@example.com");
-	
+
 	//Query the response
 	if(!response.isValid()) {
 		//Do something the email is invalid
-		
+
 		final String didYouMean = response.getDidYouMean();
 		if(didYouMean != null) {
 			//Ask if the meant the value of didYouMean
 		}
 	}
-	
+
 ### Mailing Lists
 #### Fetch Lists
 	Collection<ListInfo> lists = MailgunManager.getMailingLists();
@@ -71,20 +71,20 @@ Using the Mailgun Manager library is easy.
 	objects.put("city", "Seattle");
 	objects.put("created", DateFormat.getInstance().format(new Date()));
 	objects.put("province", "WA");
-		
+
 	ListMemberRequest member = new ListMemberRequest()
 	                                .setAddress("john@example.com")
 	                                .setName(" John Doe")
 	                                .setJSONVar(objects.toString());
-		
+
 	boolean success = MailgunManager.addMailingListMember("list@mg.example.com", member)
-	
+
 #### Add Multiple Members
 Unlike the API, Mailgun Manager will accept adding `> 1000` members at a time.
 
 	List<ListMember> members = ...
 	boolean success = MailgunManager.addMailingListMembers("list@mg.example.com", members)
-	
+
 #### Fetch a Member
 	ListMemberRequest request = ...
 	boolean success = MailgunManager.addMailingListMember(sMailingListAddress, request);
@@ -129,11 +129,11 @@ Unlike the API, Mailgun Manager will accept adding `> 1000` members at a time.
 
 				return type.cast(var);
 			}
-		};	
-    
+		};
+
     	//Register the converter
     	ConvertUtils.register(varConverter, MyVarObject.class)
-	
+
 		List<ListMember> members = getMailingListMembers("list@mg.example.com", MyVarObject.class);
 
 #### Update a Member
@@ -147,9 +147,9 @@ Unlike the API, Mailgun Manager will accept adding `> 1000` members at a time.
 
 	boolean success;
 	success = MailgunManager.deleteMailingListMember("list@mg.example.com", "john@example.com")
-	
+
 ### Messages
-			
+
 	///////////////////////////////////////
 	//Send a email
 	/////////////////////////////////////////
@@ -159,28 +159,28 @@ Unlike the API, Mailgun Manager will accept adding `> 1000` members at a time.
 								 .setSubject("Hello")
 								 .setTextBody("Hello Mary:\n\nThis message was sent from Mailgun Manager for Java.")
 								 .setHeader("X-Test-Class", getClass().getSimpleName());
-	
+
 	boolean success = MailgunManager.sendMessage(email);
 
 ### Campaigns
 
 #### Fetch Campaign
-	
+
 	Campaign campaign = MailgunManager.getCampaign("myCampaignId");
 
 #### Fetch Events
 
 	List<Map<String, Object>> events;
 	events = MailgunManager.getCampaignEvents("myCampaignId");
-	
+
 #### Save Events to a CSV File
 
 	MailgunManager.saveCampaignEventsToCSV("myCampaignId");
-		
+
 ## Motivation
 I created this library primarily for two reasons:
 
-1. I had a hard time finding a Java implementation of the Mailgun API. 
+1. I had a hard time finding a Java implementation of the Mailgun API.
 2. I was unable to find examples using the latest version of the [Jersey framework](https://jersey.java.net).
 
 In any case, this project is a work-in-progress.
@@ -216,7 +216,7 @@ The following steps assume that you're using Eclipse with the [Egit](http://www.
 
 ## API Reference
 
-The `MailgunManager` class in the `com.rodaxsoft.mailgun` package is a facade class that implements the following methods: 
+The `MailgunManager` class in the `com.rodaxsoft.mailgun` package is a facade class that implements the following methods:
 
 * `addMailingListMember(String, ListMemberRequest)`
 * `addMailingListMembers(String, List<ListMember>)`
@@ -225,7 +225,7 @@ The `MailgunManager` class in the `com.rodaxsoft.mailgun` package is a facade cl
 * `getCampaignEvents(String)`
 * `getMailingListMember(String, String)`
 * `getMailingListMembers(String)`
-* `getMailingListMembers(String, Class<?>)` 
+* `getMailingListMembers(String, Class<?>)`
 * `getMailingLists()`
 * `isValidEmail(String)`
 * `register(MailgunAccount)`
@@ -258,7 +258,7 @@ Before running, edit the properties in `testcase.properties` file
 
 	#Campaign
 	campaign.id = myid
-	
+
 ## Contributors
 
 To reach a milestone for a major release, we'd like contributions for the following:
