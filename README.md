@@ -185,7 +185,7 @@ I created this library primarily for two reasons:
 
 In any case, this project is a work-in-progress.
 
-## Installation
+## Eclipse Project Setup
 
 ### Prerequisites
 1. Install and configure [Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
