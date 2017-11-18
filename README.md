@@ -187,28 +187,16 @@ In any case, this project is a work-in-progress.
 
 ## Installation
 
-### Prerequisites
-1. Install and configure [Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
+### Gradle (Required)
+This project uses [Gradle](https://gradle.org) for build automation.
+
+### Eclipse IDE (Optional)
+
+1. Install and configure [Eclipse IDE for Java EE Developers](http://www.eclipse.org/downloads/packages)
 2. Install and configure the [Egit](http://www.eclipse.org/egit) plugin (optional)
-3. Install and configure the [Buildship Eclipse Plugin](https://projects.eclipse.org/projects/tools.buildship) (optional)
+3. Install and configure the [Buildship Eclipse Plugin](https://projects.eclipse.org/projects/tools.buildship)
 
-This project uses [Gradle](https://gradle.org) for build automation. It's dependent on the following libraries:
-
-* commons-collections4 4.1
-* commons-configuration 2.0
-* commons-lang3 3.4
-* commons-logging 1.2
-* commons-validator 1.5
-* commons-beanutils 1.9
-* commons-io 2.5
-* commons-csv 1.4
-* jersey-client 2.23
-* json-lib 2.4 (jdk15)
-* javax.mail 1.5
-
-### Import Project
-The following steps assume that you're using Eclipse with the [Egit](http://www.eclipse.org/egit) plugin.
-
+**Import the project:**
 1. In Eclipse, click File > Import > Git > Projects from Git.
 2. Then click Next > Clone URI, set the Connection to Git, set the URI, and click Next > Next > Next > Finish.
 3. Click Import existing projects, click Working Directory, and click Next > Finish.
