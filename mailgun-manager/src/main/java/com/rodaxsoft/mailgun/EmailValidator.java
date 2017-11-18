@@ -14,6 +14,8 @@ import static com.rodaxsoft.mailgun.EmailValidationResponse.DID_YOU_MEAN_KEY;
 import static com.rodaxsoft.mailgun.EmailValidationResponse.IS_VALID_KEY;
 import static javax.ws.rs.core.MediaType.APPLICATION_JSON;
 import static org.apache.commons.validator.routines.EmailValidator.getInstance;
+
+import net.sf.json.JSONNull;
 import net.sf.json.JSONObject;
 
 import org.apache.commons.lang3.exception.ContextedException;
@@ -24,7 +26,7 @@ import com.rodaxsoft.http.RESTResponse;
 /**
  * EmailValidator class is facade of the Mailgun EmailRequest Validation service 
  * @author John Boyer
- * @version 2015-08-14
+ * @version 2017-11-18
  * @since 0.1
  *
  */
@@ -62,12 +64,17 @@ final class EmailValidator extends AbstractMailgunRoutine {
 					configureRequest(APPLICATION_JSON).
 					invokeGet();
 
-			JSONObject jsonOutput = toJSONObject(restResponse.getStringResponse());
-
+			JSONObject jsonOutput = restResponse.toJSONObject();
+			Object object = jsonOutput.get(DID_YOU_MEAN_KEY);
+			String didYouMean;
+			if(object instanceof JSONNull) {
+				didYouMean = null;
+			} else {
+				didYouMean = jsonOutput.getString(DID_YOU_MEAN_KEY);
+			}
+			
 			emailValidationResponse = 
-					new EmailValidationResponse(emailAddress, 
-							jsonOutput.getBoolean(IS_VALID_KEY), 
-							jsonOutput.getString(DID_YOU_MEAN_KEY));
+					new EmailValidationResponse(emailAddress, jsonOutput.getBoolean(IS_VALID_KEY), didYouMean);
 
 			return emailValidationResponse;	
 		}

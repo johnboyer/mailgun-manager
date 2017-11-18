@@ -14,6 +14,7 @@
 /lib/
 /com.rodaxsoft-mailgun-manager-default.html
 /com.rodaxsoft-mailgun-manager-default.graphml
+*.csv
 
 # Created by https://www.gitignore.io/api/java,linux,macos,gradle,windows,eclipse
 
