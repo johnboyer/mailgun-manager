@@ -1,7 +1,7 @@
-[![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0) [ ![Download](https://api.bintray.com/packages/johnboyer/maven/mailgun-manager/images/download.svg) ](https://bintray.com/johnboyer/maven/mailgun-manager/_latestVersion)[![Get help on Codementor](https://cdn.codementor.io/badges/get_help_github.svg)](https://www.codementor.io/johnboyer?utm_source=github&utm_medium=button&utm_term=johnboyer&utm_campaign=github)
+[![License](https://img.shields.io/badge/license-MPL%202.0-orange.svg)](https://www.mozilla.org/en-US/MPL/2.0)
 
-# Mailgun Manager for Java  Version 1.0.0
-*Updated Thu, Jul 17, 2017*
+# Mailgun Manager for Java  Version 1.0.1
+*Updated Sat, Nov 18, 2017*
 
 ## Introduction
 Mailgun Manager API project is a _partial_ Java library implementation of [Mailgun’s API](http://documentation.mailgun.com/api_reference.html#api-reference). It provides a single interface to perform common Mailgun API operations and simplifies access by abstracting the lower level HTTP programming code.
@@ -185,7 +185,7 @@ I created this library primarily for two reasons:
 
 In any case, this project is a work-in-progress.
 
-## Eclipse Project Setup
+## Installation
 
 ### Prerequisites
 1. Install and configure [Eclipse IDE for Java EE Developers](https://www.eclipse.org/downloads/packages/eclipse-ide-java-ee-developers/lunasr1)
